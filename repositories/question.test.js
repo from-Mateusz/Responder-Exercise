@@ -189,9 +189,7 @@ describe('question repository', () => {
     await writeFile(TEST_QUESTIONS_FILE_PATH, JSON.stringify(testQuestions));
 
     const question = await questionRepo.getAnswers(testQuestions[0].id);
-
-    console.log("Found question: ", question);
-
+    
     expect(await questionRepo.getAnswers(testQuestions[0].id)).toHaveLength(2);
   });
 })
